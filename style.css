@@ -1,0 +1,68 @@
+body{
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("images/UC.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-container {
+  background: radial-gradient(circle, rgb(69,194,188), rgb(4,59,91));
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+.login-box{
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  color: rgb(4,59,91);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+.logo {
+  margin-bottom: 20px;
+  background-color: rgba(4,59,91, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+}
+.logo img {
+  width: 100px;
+  height: auto;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  background: white;
+  color: rgb(4,59,91);
+  border-radius: 30px;
+  margin: 15px 0;
+  padding: 10px;
+}
+
+.input-group i {
+  margin: 0 10px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.btn-login {
+  background: rgb(4,59,91);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+  background: rgb(69,194,188);
+  color: white;
+}
