@@ -17,7 +17,7 @@
     <section class="layout">
         <div class="header">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="principal-index.html">
+                <a class="navbar-brand" href="../Principal/principal-index.html">
                     <img src="../images/PLATAFORMA-VIRTUAL.png" width="100" height="35" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -26,7 +26,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="principal-index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+                        <a class="nav-link" href="../Principal/principal-index.html"><i class="fa-solid fa-house"></i> Inicio</a>
                         <a class="nav-link" href="../Cursos/cursos-index.php"><i class="fa-solid fa-book"></i>
                             Cursos</a>
                         <a class="nav-link" href="../Estudiantes/estudiantes-index.php"><i
