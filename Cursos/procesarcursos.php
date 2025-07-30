@@ -1,20 +1,20 @@
 <?php
 include '../database.php';
 
-$codicurso = trim($_POST['codicurso'] ?? '');
-$nombre = trim($_POST['nombre'] ?? '');
-$creditos = trim($_POST['creditos'] ?? '');
-$requisito = trim($_POST['requisito'] ?? '');
-$cuatrimestre = trim($_POST['cuatrimestre'] ?? '');
+$CODIGOCURSO = trim($_POST['CODIGOCURSO'] ?? '');
+$NOMBRE = trim($_POST['NOMBRE'] ?? '');
+$CREDITOS = trim($_POST['CREDITOS'] ?? '');
+$REQUISITO = trim($_POST['REQUISITO'] ?? '');
+$CUATRIMESTRE = trim($_POST['CUATRIMESTRE'] ?? '');
 $action = $_POST['action'] ?? '';
 
 $errores = [];
-if ($nombre === '')  $errores[] = 'El nombre es obligatorio.';
-if ($requisito === '')  $errores[] = 'Los requisito son obligatorios.';
-if ($codicurso === '')  $errores[] = 'El código del curso es obligatorio.';
-if ($creditos === '')  $errores[] = 'Los créditos son obligatorios.';
-if ($cuatrimestre === '')  $errores[] = 'El cuatrimestre es obligatorio.';
-if (!is_numeric($creditos)) $errores[] = 'Los créditos deben ser un número.';
+if ($NOMBRE === '')  $errores[] = 'El nombre es obligatorio.';
+if ($REQUISITO === '')  $errores[] = 'Los requisito son obligatorios.';
+if ($CODIGOCURSO === '')  $errores[] = 'El código del curso es obligatorio.';
+if ($CREDITOS === '')  $errores[] = 'Los créditos son obligatorios.';
+if ($CUATRIMESTRE === '')  $errores[] = 'El cuatrimestre es obligatorio.';
+if (!is_numeric($CREDITOS)) $errores[] = 'Los créditos deben ser un número.';
 
 if (count($errores) > 0) {
   foreach ($errores as $err) {
@@ -24,9 +24,9 @@ if (count($errores) > 0) {
   exit;
 }
 
-$sql  = "INSERT INTO cursos (codicurso, nombre, creditos, requisito, cuatrimestre) VALUES (:codicurso, :nombre, :creditos, :requisito, :cuatrimestre)";
+$sql  = "INSERT INTO cursos (CODIGOCURSO, NOMBRE, CREDITOS, REQUISITO, CUATRIMESTRE) VALUES (:CODIGOCURSO, :NOMBRE, :CREDITOS, :REQUISITO, :CUATRIMESTRE)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([':codicurso' => $codicurso, ':nombre' => $nombre, ':creditos' => $creditos, ':requisito' => $requisito, ':cuatrimestre' => $cuatrimestre]);
+$stmt->execute([':CODIGOCURSO' => $CODIGOCURSO, ':NOMBRE' => $NOMBRE, ':CREDITOS' => $CREDITOS, ':REQUISITO' => $REQUISITO, ':CUATRIMESTRE' => $CUATRIMESTRE]);
 
 header('Location: cursos-index.php');
 exit;
