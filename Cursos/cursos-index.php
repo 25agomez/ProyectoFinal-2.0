@@ -77,7 +77,7 @@
                             <input type="text" class="form-control" id="cursoCuatrimestre" name="CUATRIMESTRE" required>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Crear Curso</button>
+                    <button type="submit" class="btn btn-primary" id="botonCrear">Crear Curso</button>
                 </form>
 
                 <table class="table">
