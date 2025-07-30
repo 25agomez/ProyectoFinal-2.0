@@ -26,6 +26,20 @@ body {
     color: #ffffff;
 }
 
+#Inicio,
+#Cursos,
+#Estudiantes,
+#Profesores {
+    transition: background-color 0.5s ease;
+}
+
+#Inicio:hover,
+#Cursos:hover,
+#Estudiantes:hover,
+#Profesores:hover {
+    background-color: rgb(69,194,188);
+}
+
 .leftSide {
     grid-area: leftSide;
     background-color: #ffffff;

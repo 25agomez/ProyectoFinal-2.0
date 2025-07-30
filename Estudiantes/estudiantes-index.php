@@ -26,12 +26,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="../Principal/principal-index.html"><i class="fa-solid fa-house"></i> Inicio</a>
-                        <a class="nav-link" href="../Cursos/cursos-index.php"><i class="fa-solid fa-book"></i>
+                        <a class="nav-link" id="Inicio" href="../Principal/principal-index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+                        <a class="nav-link" id="Cursos" href="../Cursos/cursos-index.php"><i class="fa-solid fa-book"></i>
                             Cursos</a>
-                        <a class="nav-link" href="../Estudiantes/estudiantes-index.php"><i
+                        <a class="nav-link" id="Estudiantes" href="../Estudiantes/estudiantes-index.php"><i
                                 class="fa-solid fa-user-graduate"></i> Estudiantes</a>
-                        <a class="nav-link" href="../Profesores/profesores-index.php"><i
+                        <a class="nav-link" id="Profesores" href="../Profesores/profesores-index.php"><i
                                 class="fa-solid fa-chalkboard-teacher"></i> Profesores</a>
                     </div>
                 </div>
