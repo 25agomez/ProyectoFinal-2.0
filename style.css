@@ -24,12 +24,12 @@ body{
 .logo {
   margin-bottom: 20px;
   background-color: rgba(4,59,91, 0.8);
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
 }
 .logo img {
-  width: 100px;
-  height: auto;
+  width: 175px;
+  height: 75px;
 }
 .input-group {
   display: flex;
