@@ -52,7 +52,7 @@
         </div>
         <div class="body">
             <div class="container">
-                <form action="procesarcursos.php" method="POST">
+                <form action="procesarprofesores.php" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label>Nombre del Profesor</label>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label>Teléfono</label>
-                            <input type="phone" class="form-control" id="cursoCuatrimestre" name="TELEFONO" required>
+                            <input type="text" class="form-control" id="cursoCuatrimestre" name="TELEFONO" required>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Email</label>
