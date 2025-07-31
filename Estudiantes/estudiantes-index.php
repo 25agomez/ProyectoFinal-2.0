@@ -55,7 +55,7 @@
                 <form action="procesarcursos.php" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label>Nombre</label>
+                            <label>Nombre del Estudiante</label>
                             <input type="text" class="form-control" id="estudianteNombre" name="NOMBRE" required>
                         </div>
                         <div class="form-group col-md-4">
