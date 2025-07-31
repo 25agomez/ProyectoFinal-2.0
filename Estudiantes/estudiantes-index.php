@@ -69,7 +69,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <label>Código Estudiante</label>
+                            <label>Código del Estudiante</label>
                             <input type="text" class="form-control" id="estudianteCodigo" name="CODIGOESTUDIANTE" required>
                         </div>
                         <div class="form-group col-md-3">

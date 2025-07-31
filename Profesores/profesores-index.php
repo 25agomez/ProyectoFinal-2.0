@@ -85,7 +85,7 @@
                             <input type="text" class="form-control" id="cursoCarrera" name="CURSOIMPARTE" required>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="botonCrear">Crear Curso</button>
+                    <button type="submit" class="btn btn-primary" id="botonCrear">Crear Profesor</button>
                 </form>
 
                 <table class="table">
