@@ -54,27 +54,35 @@
             <div class="container">
                 <form action="procesarcursos.php" method="POST">
                     <div class="form-row">
-                        <div class="form-group col-md-5">
-                            <label>Nombre del Curso</label>
+                        <div class="form-group col-md-4">
+                            <label>Nombre del Profesor</label>
                             <input type="text" class="form-control" id="cursoNombre" name="NOMBRE" required>
                         </div>
                         <div class="form-group col-md-4">
-                            <label>Código del Curso</label>
-                            <input type="text" class="form-control" id="cursoCodigo" name="CODIGOCURSO" required>
+                            <label>Primer Apellido</label>
+                            <input type="text" class="form-control" id="cursoCodigo" name="APELLIDO1" required>
                         </div>
-                        <div class="form-group col-md-3">
-                            <label>Créditos</label>
-                            <input type="number" class="form-control" id="cursoCreditos" name="CREDITOS" required>
+                        <div class="form-group col-md-4">
+                            <label>Segundo Apellido</label>
+                            <input type="text" class="form-control" id="cursoCreditos" name="APELLIDO2" required>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Requisitos</label>
-                            <input type="text" class="form-control" id="cursoRequisitos" name="REQUISITO" required>
+                        <div class="form-group col-md-3">
+                            <label>Código del Profesor</label>
+                            <input type="text" class="form-control" id="cursoRequisitos" name="CODIGOPROFESOR" required>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label>Cuatrimestre</label>
-                            <input type="text" class="form-control" id="cursoCuatrimestre" name="CUATRIMESTRE" required>
+                        <div class="form-group col-md-3">
+                            <label>Teléfono</label>
+                            <input type="phone" class="form-control" id="cursoCuatrimestre" name="TELEFONO" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="cursoEmail" name="EMAIL" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Curso Imparte</label>
+                            <input type="text" class="form-control" id="cursoCarrera" name="CURSOIMPARTE" required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary" id="botonCrear">Crear Curso</button>
@@ -86,23 +94,26 @@
                             <th scope="col">ID</th>
                             <th scope="col">Código</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Créditos</th>
-                            <th scope="col">Requisito</th>
-                            <th scope="col">Cuatrimestre</th>
-                            <th scope="col">Fecha Registro</th>
+                            <th scope="col">Apellido1</th>
+                            <th scope="col">Apellido2</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Curso Imparte</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $stmt = $pdo->query("SELECT * FROM cursos ORDER BY ID ASC");
+                            $stmt = $pdo->query("SELECT * FROM profesores ORDER BY ID ASC");
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 echo "<tr>
                                             <td>{$row['ID']}</td>
-                                            <td>".htmlspecialchars($row['CODIGOCURSO'])."</td>
+                                            <td>".htmlspecialchars($row['CODIGOPROFESOR'])."</td>
                                             <td>".htmlspecialchars($row['NOMBRE'])."</td>
-                                            <td>{$row['CREDITOS']}</td>
-                                            <td>".htmlspecialchars($row['REQUISITO'])."</td>
-                                            <td>".htmlspecialchars($row['CUATRIMESTRE'])."</td>
+                                            <td>".htmlspecialchars($row['APELLIDO1'])."</td>
+                                            <td>".htmlspecialchars($row['APELLIDO2'])."</td>
+                                            <td>".htmlspecialchars($row['EMAIL'])."</td>
+                                            <td>".htmlspecialchars($row['TELEFONO'])."</td>
+                                            <td>".htmlspecialchars($row['CURSOIMPARTE'])."</td>
                                         </tr>";
                             }
                         ?>

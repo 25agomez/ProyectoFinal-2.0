@@ -89,7 +89,6 @@
                             <th scope="col">Créditos</th>
                             <th scope="col">Requisito</th>
                             <th scope="col">Cuatrimestre</th>
-                            <th scope="col">Fecha Registro</th>
                         </tr>
                     </thead>
                     <tbody>
