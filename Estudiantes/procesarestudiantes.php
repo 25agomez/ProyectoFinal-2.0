@@ -1,25 +1,25 @@
 <?php
 include '../database.php';
 
-$codigoestudiante = trim($_POST['codigoestudiante'] ?? '');
-$nombre = trim($_POST['nombre'] ?? '');
-$apellido1 = trim($_POST['apellido1'] ?? '');
-$apellido2 = trim($_POST['apellido2'] ?? '');
-$email = trim($_POST['email'] ?? '');
-$telefono = trim($_POST['telefono'] ?? '');
-$carrera = trim($_POST['carrera'] ?? '');
+$CODIGOESTUDIANTE = trim($_POST['CODIGOESTUDIANTE'] ?? '');
+$NOMBRE = trim($_POST['NOMBRE'] ?? '');
+$APELLIDO1 = trim($_POST['APELLIDO1'] ?? '');
+$APELLIDO2 = trim($_POST['APELLIDO2'] ?? '');
+$EMAIL = trim($_POST['EMAIL'] ?? '');
+$TELEFONO = trim($_POST['TELEFONO'] ?? '');
+$CARRERA = trim($_POST['CARRERA'] ?? '');
 $action = $_POST['action'] ?? '';
 
 $errores = [];
-if ($nombre === '')  $errores[] = 'El nombre es obligatorio.';
-if ($apellido1 === '')  $errores[] = 'El primer apellido es obligatorio.';
-if ($apellido2 === '')  $errores[] = 'El segundo apellido es obligatorio.';
-if ($codigoestudiante === '')  $errores[] = 'El código del estudiante es obligatorio.';
-if ($email === '')  $errores[] = 'El email es obligatorio.';
-if ($telefono === '')  $errores[] = 'El teléfono es obligatorio.';
-if ($carrera === '')  $errores[] = 'La carrera es obligatoria.';
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errores[] = 'Email inválido.';
-if (!is_numeric($telefono)) $errores[] = 'El teléfono debe ser un número.';
+if ($NOMBRE === '')  $errores[] = 'El nombre es obligatorio.';
+if ($APELLIDO1 === '')  $errores[] = 'El primer apellido es obligatorio.';
+if ($APELLIDO2 === '')  $errores[] = 'El segundo apellido es obligatorio.';
+if ($CODIGOESTUDIANTE === '')  $errores[] = 'El código del estudiante es obligatorio.';
+if ($EMAIL === '')  $errores[] = 'El email es obligatorio.';
+if ($TELEFONO === '')  $errores[] = 'El teléfono es obligatorio.';
+if ($CARRERA === '')  $errores[] = 'La carrera es obligatoria.';
+if (!filter_var($EMAIL, FILTER_VALIDATE_EMAIL)) $errores[] = 'Email inválido.';
+if (!is_numeric($TELEFONO)) $errores[] = 'El teléfono debe ser un número.';
 
 if (count($errores) > 0) {
   foreach ($errores as $err) {
@@ -29,9 +29,9 @@ if (count($errores) > 0) {
   exit;
 }
 
-$sql  = "INSERT INTO estudiantes (codigoestudiante, nombre, apellido1, apellido2, email, telefono, carrera) VALUES (:codigoestudiante, :nombre, :apellido1, :apellido2, :email, :telefono, :carrera)";
+$sql  = "INSERT INTO estudiantes (CODIGOESTUDIANTE, NOMBRE, APELLIDO1, APELLIDO2, EMAIL, TELEFONO, CARRERA) VALUES (:CODIGOESTUDIANTE, :NOMBRE, :APELLIDO1, :APELLIDO2, :EMAIL, :TELEFONO, :CARRERA)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([':codigoestudiante' => $codigoestudiante, ':nombre' => $nombre, ':apellido1' => $apellido1, ':apellido2' => $apellido2, ':email' => $email, ':telefono' => $telefono, ':carrera' => $carrera]);
+$stmt->execute([':CODIGOESTUDIANTE' => $CODIGOESTUDIANTE, ':NOMBRE' => $NOMBRE, ':APELLIDO1' => $APELLIDO1, ':APELLIDO2' => $APELLIDO2, ':EMAIL' => $EMAIL, ':TELEFONO' => $TELEFONO, ':CARRERA' => $CARRERA]);
 
 header('Location: estudiantes-index.php');
 exit;

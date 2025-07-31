@@ -52,7 +52,73 @@
         </div>
         <div class="body">
             <div class="container">
-                <h1 class="text-center">Seccion de Estudiantes</h1>
+                <form action="procesarcursos.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" id="estudianteNombre" name="NOMBRE" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Primer Apellido</label>
+                            <input type="text" class="form-control" id="estudianteApellido1" name="APELLIDO1" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Segundo Apellido</label>
+                            <input type="text" class="form-control" id="estudianteApellido2" name="APELLIDO2" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label>Código Estudiante</label>
+                            <input type="text" class="form-control" id="estudianteCodigo" name="CODIGOESTUDIANTE" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Teléfono</label>
+                            <input type="phone" class="form-control" id="estudianteTelefono" name="TELEFONO" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="estudianteEmail" name="EMAIL" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Carrera</label>
+                            <input type="text" class="form-control" id="estudianteCarrera" name="CARRERA" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="botonCrear">Crear Estudiante</button>
+                </form>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido1</th>
+                            <th scope="col">Apellido2</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Carrera</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $stmt = $pdo->query("SELECT * FROM estudiantes ORDER BY ID ASC");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<tr>
+                                            <td>{$row['ID']}</td>
+                                            <td>".htmlspecialchars($row['CODIGOESTUDIANTE'])."</td>
+                                            <td>".htmlspecialchars($row['NOMBRE'])."</td>
+                                            <td>".htmlspecialchars($row['APELLIDO1'])."</td>
+                                            <td>".htmlspecialchars($row['APELLIDO2'])."</td>
+                                            <td>".htmlspecialchars($row['EMAIL'])."</td>
+                                            <td>".htmlspecialchars($row['TELEFONO'])."</td>
+                                            <td>".htmlspecialchars($row['CARRERA'])."</td>
+                                        </tr>";
+                            }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="footer">

@@ -94,7 +94,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            $stmt = $pdo->query("SELECT * FROM cursos ORDER BY FECHA_REGISTRO DESC");
+                            $stmt = $pdo->query("SELECT * FROM cursos ORDER BY ID ASC");
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 echo "<tr>
                                             <td>{$row['ID']}</td>
@@ -103,7 +103,6 @@
                                             <td>{$row['CREDITOS']}</td>
                                             <td>".htmlspecialchars($row['REQUISITO'])."</td>
                                             <td>".htmlspecialchars($row['CUATRIMESTRE'])."</td>
-                                            <td>{$row['FECHA_REGISTRO']}</td>
                                         </tr>";
                             }
                         ?>

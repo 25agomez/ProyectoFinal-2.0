@@ -52,7 +52,62 @@
         </div>
         <div class="body">
             <div class="container">
-                <h1 class="text-center">Seccion de Profesores</h1>
+                <form action="procesarcursos.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label>Nombre del Curso</label>
+                            <input type="text" class="form-control" id="cursoNombre" name="NOMBRE" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Código del Curso</label>
+                            <input type="text" class="form-control" id="cursoCodigo" name="CODIGOCURSO" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Créditos</label>
+                            <input type="number" class="form-control" id="cursoCreditos" name="CREDITOS" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Requisitos</label>
+                            <input type="text" class="form-control" id="cursoRequisitos" name="REQUISITO" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Cuatrimestre</label>
+                            <input type="text" class="form-control" id="cursoCuatrimestre" name="CUATRIMESTRE" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="botonCrear">Crear Curso</button>
+                </form>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Créditos</th>
+                            <th scope="col">Requisito</th>
+                            <th scope="col">Cuatrimestre</th>
+                            <th scope="col">Fecha Registro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $stmt = $pdo->query("SELECT * FROM cursos ORDER BY ID ASC");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<tr>
+                                            <td>{$row['ID']}</td>
+                                            <td>".htmlspecialchars($row['CODIGOCURSO'])."</td>
+                                            <td>".htmlspecialchars($row['NOMBRE'])."</td>
+                                            <td>{$row['CREDITOS']}</td>
+                                            <td>".htmlspecialchars($row['REQUISITO'])."</td>
+                                            <td>".htmlspecialchars($row['CUATRIMESTRE'])."</td>
+                                        </tr>";
+                            }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="footer">
