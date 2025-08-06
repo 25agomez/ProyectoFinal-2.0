@@ -16,7 +16,7 @@
         <div class="login-box">
             <div class="logo"><img src="images/PLATAFORMA-VIRTUAL.png" alt="Logo" /></div>
             <h2>Iniciar Sesión</h2>
-            <form id="loginForm">
+            <form id="loginForm" action="login.php" method="POST">
                 <div class="input-group">
                     <i class="fa-solid fa-user"></i>
                     <input type="text" class="form-control" id="Usuario" name="Usuario" placeholder="Usuario" required />
@@ -27,6 +27,8 @@
                 </div>
                 <button type="button" class="btn btn-login" id="login-button">Iniciar Sesión</button>
             </form>
+            <p>¿No tienes cuenta?</p>
+            <a href="registro-index.html" class="btn btn-register">Registrarse</a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

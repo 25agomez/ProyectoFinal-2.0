@@ -6,13 +6,13 @@ body{
   justify-content: center;
   align-items: center;
 }
-.login-container {
+.login-container, .register-container {
   background: radial-gradient(circle, rgb(69,194,188), rgb(4,59,91));
   padding: 30px;
   border-radius: 15px;
   backdrop-filter: blur(5px);
 }
-.login-box{
+.login-box, .register-box{
   background-color: rgba(255, 255, 255, 0.8);
   padding: 40px;
   border-radius: 15px;
@@ -50,7 +50,7 @@ body{
   outline: none;
   width: 100%;
 }
-.btn-login {
+.btn-login, .btn-register {
   background: rgb(4,59,91);
   color: white;
   border: none;
@@ -59,10 +59,11 @@ body{
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
+  margin-bottom: 20px;
   transition: background 0.3s ease;
 }
 
-.btn-login:hover {
+.btn-login:hover, .btn-register:hover {
   background: rgb(69,194,188);
   color: white;
 }
