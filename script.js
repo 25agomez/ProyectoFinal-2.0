@@ -8,6 +8,7 @@ document.getElementById("login-button").addEventListener("click", function(event
             icon: 'error',
             title: 'Oops...',
             text: "Por favor, ingresa un nombre de usuario.",
+            heightAuto: false,
         });
     }  else if (usuario === "admin") {
         // Redirige a otra página
@@ -15,6 +16,7 @@ document.getElementById("login-button").addEventListener("click", function(event
             icon: 'success',
             title: 'Bienvenido',
             text: `Bienvenido, ${usuario}`,
+            heightAuto: false,
         }).then((result) => {
             // Redirige a la página principal después de mostrar el mensaje
             if (result.isConfirmed) {
@@ -26,6 +28,7 @@ document.getElementById("login-button").addEventListener("click", function(event
             icon: 'warning',
             title: 'Oops...',
             text: "Usuario incorrecto.",
+            heightAuto: false,
         });
     }
 });
