@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/index.php": {
+    "api/profesores-index.php": {
       "runtime": "vercel-php@0.3.6"
     }
   },
@@ -22,7 +22,7 @@
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization"
       },
-      "dest": "/api/index.php"
+      "dest": "/api/profesores-index.php"
     }
   ]
 }
