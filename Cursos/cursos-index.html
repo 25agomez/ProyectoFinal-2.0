@@ -1,4 +1,3 @@
-<?php include '../database.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,8 +25,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" id="Inicio" href="../Principal/principal-index.html"><i class="fa-solid fa-house"></i> Inicio</a>
-                        <a class="nav-link" id="Cursos" href="../Cursos/cursos-index.php"><i class="fa-solid fa-book"></i>
+                        <a class="nav-link" id="Inicio" href="../Principal/principal-index.html"><i
+                                class="fa-solid fa-house"></i> Inicio</a>
+                        <a class="nav-link" id="Cursos" href="../Cursos/cursos-index.html"><i
+                                class="fa-solid fa-book"></i>
                             Cursos</a>
                         <a class="nav-link" id="Estudiantes" href="../Estudiantes/estudiantes-index.php"><i
                                 class="fa-solid fa-user-graduate"></i> Estudiantes</a>
@@ -52,61 +53,48 @@
         </div>
         <div class="body">
             <div class="container">
-                <form action="procesarcursos.php" method="POST">
-                    <div class="form-row">
-                        <div class="form-group col-md-5">
-                            <label>Nombre del Curso</label>
-                            <input type="text" class="form-control" id="cursoNombre" name="NOMBRE" required>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>Código del Curso</label>
-                            <input type="text" class="form-control" id="cursoCodigo" name="CODIGOCURSO" required>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label>Créditos</label>
-                            <input type="number" class="form-control" id="cursoCreditos" name="CREDITOS" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Requisitos</label>
-                            <input type="text" class="form-control" id="cursoRequisitos" name="REQUISITO" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Cuatrimestre</label>
-                            <input type="text" class="form-control" id="cursoCuatrimestre" name="CUATRIMESTRE" required>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="botonCrear">Crear Curso</button>
-                </form>
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Código</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Créditos</th>
-                            <th scope="col">Requisito</th>
-                            <th scope="col">Cuatrimestre</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            $stmt = $pdo->query("SELECT * FROM cursos ORDER BY ID ASC");
-                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                echo "<tr>
-                                            <td>{$row['ID']}</td>
-                                            <td>".htmlspecialchars($row['CODIGOCURSO'])."</td>
-                                            <td>".htmlspecialchars($row['NOMBRE'])."</td>
-                                            <td>{$row['CREDITOS']}</td>
-                                            <td>".htmlspecialchars($row['REQUISITO'])."</td>
-                                            <td>".htmlspecialchars($row['CUATRIMESTRE'])."</td>
-                                        </tr>";
-                            }
-                        ?>
-                    </tbody>
-                </table>
+                <h2>Lista de Cursos</h2>
+                <ul id="lista" class="list-group"></ul>
+
+                <!--<button id="open-popup-button" class="btn btn-primary btn-registrar">Registrar Curso</button>
+                <div id="popup-overlay" class="overlay">
+                    <div id="popup-content" class="popup">-->
+                        <h2>Registrar Nuevo Curso</h2>
+                        <form action="" id="formulario" class="mt-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label for="id" class="input-group-text">ID:</label>
+                                </div>
+                                <input type="text" id="id" disabled class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="id">Nombre del Curso:</label>
+                                <input type="text" id="nombre" placeholder="Nombre" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="id">Codigo del Curso:</label>
+                                <input type="text" id="codcurso" placeholder="Codigo del Curso" required
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="id">Creditos:</label>
+                                <input type="number" id="creditos" placeholder="Creditos" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="id">Requisito:</label>
+                                <input type="text" id="requisito" placeholder="Requisito" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="id">Cuatrimestre:</label>
+                                <input type="text" id="cuatrimestre" placeholder="Cuatrimestre" required
+                                    class="form-control">
+                            </div>
+                            <button id="open-popup-button" class="btn btn-primary btn-registrar">Registrar Curso</button>
+                        </form>
+                    <!--</div>
+                </div>-->
+
             </div>
         </div>
         <div class="footer">
@@ -121,6 +109,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/popup.js"></script>
 </body>
 
 </html>
