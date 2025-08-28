@@ -19,7 +19,7 @@ function listarProfesores() {
         li.innerHTML = `
           <div>
           <div class="badge badge-primary mr-3">${u.id}</div>
-          ${u.codprofe} - ${u.nombre} - ${u.apellido1} - ${u.apellido2} - ${u.correo} - ${u.telefono}
+          ${u.codprofe} - ${u.nombre} ${u.apellido1} ${u.apellido2} - ${u.correo} - ${u.telefono}
           </div>
           
           <div>

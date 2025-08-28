@@ -19,7 +19,7 @@ function listarEstudiantes() {
         li.innerHTML = `
           <div>
           <div class="badge badge-primary mr-3">${u.id}</div>
-          ${u.codestud} - ${u.nombre} - ${u.apellido1} - ${u.apellido2} - ${u.correo} - ${u.telefono}
+          ${u.codestud} - ${u.nombre} ${u.apellido1} ${u.apellido2} - ${u.correo} - ${u.telefono}
           </div>
           
           <div>
